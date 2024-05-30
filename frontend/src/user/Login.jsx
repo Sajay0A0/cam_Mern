@@ -96,6 +96,7 @@ console.log("log",logUser);
           style={{backgroundColor:'#bb96f7'}}
         >
           sign up
+          
         </Link>
       </div>
     </div>
