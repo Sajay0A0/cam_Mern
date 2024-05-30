@@ -1,0 +1,31 @@
+
+.col2{
+    padding: 20px 5px;
+    float: left;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    background-color: white;
+    
+    
+}
+
+.card1{
+    padding: 20px;
+    color: black;
+    height: 100%;
+    width: 50%;
+    float: left;
+    margin: 0 5% 0px 5px;
+}
+.card-desc{
+    padding: 20px;
+    text-align: left;
+    font-size: 20px;
+    margin-right: 30px;
+}
+.photo-pan img{
+    width: 30%;
+    height: auto;
+    
+}

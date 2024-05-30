@@ -1,0 +1,111 @@
+.card-slider-conatiner{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content : center;
+    align-items : center;
+    position:absolute;
+}
+.main-slider-contianer{
+    width:90%;
+    height:305px;
+    position:relative;
+    display:flex;
+    align-item:center;
+}
+.slider{
+    width:100%;
+    height:100%;
+}
+/* both icon display above ".main-slider-contianer" */
+.slider-icon.left , .slider-icon.right{
+    background:white;
+    border-radius:100%;
+    position:absolute;
+    opacity:0.2;
+    box-shadow: 5px 5px 1.25rem 0px rgb(0 0 0 / 12%);
+    curser:pointer;
+}
+.slider-icon.left{
+    left:0;
+}
+.slider-icon.right{
+    right:0;
+}
+.slider-icon.left:hover , .slider-icon.right:hover{
+    opacity:1;.slider-card{
+        display:inline-block;
+        width:320px;
+        height:300px;
+        background:white;
+        border-radius:10px;
+        margin-left:5px;
+        margin-right:5px;
+        box-shadow: 5px 5px 1.25rem 0px rgb(0 0 0 / 12%);
+        position: relative;
+    }
+    /* add nowrap for to display card in horizontally */
+    .slider{
+        width:100%;
+        height:100%;
+        white-space:nowrap;
+    }
+     /* problem is that , slider component overflow outside to fixed that we'll just add overflow */
+    .slider{
+        width:100%;
+        height:100%;
+        white-space:nowrap;
+        overflow-x:scroll;
+    }
+     /* set overflowx scroll effect */
+    .slider::-webkit-scrollbar{
+        display:none;
+    }
+    .slider{
+        width:100%;
+        height:100%;
+        /* safari scrollbar width removed */
+        scrollbar-width:none;
+    }
+    
+}
+
+.slider{
+    width:100%;
+    height:100%;
+    white-space:nowrap;
+    overflow-x:scroll;
+     /* safari scrollbar width removed */
+    scrollbar-width:none;
+    /* scroll-smooth */
+    scroll-behavior : smooth;
+}
+
+.slider-card-image{
+    width:100%;
+    height:210px;
+    background:grey;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    object-fit: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.slider-card-title{
+      font-weight: 500;
+      white-space: pre-wrap;
+      font-size: 0.625rem;
+      padding: 0.5rem;
+      margin: 0px 0px 0.313rem 0.625rem;
+}
+
+.slider-card-description{
+        opacity: 0.5;
+        font-size: 0.625rem; 
+        margin: 0px 0px 0.313rem 0.625rem;
+}
+
+
+

@@ -1,0 +1,75 @@
+.image-cart {
+    background-image: url('https://www.ruuhbythebrandstore.com/images/cart_is_empty.png');
+    background-size: contain; 
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .Container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .content-main {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .content-main td {
+    border-bottom: 1px solid #d0d0d0;
+    padding: 8px;
+  }
+  
+  /* .content-main th {
+    text-align: left;
+    background-color: red;
+  } */
+  
+  .image {
+    width: 100px; /* Adjust image width as needed */
+    cursor: pointer;
+  }
+  
+  .bttn,.bttn-1{
+    margin-top: 10px;
+  }
+  .bttn-1{
+    background-color: #bb96f7;
+    margin-left: 2px;
+  }
+  .bttn-1:hover{
+        background-color: #8269AC
+        ;
+        color: white;
+  }
+  .bttn-2{
+    background-color: #8269ac;
+    color: white;
+    margin-left:44% ;
+    margin-top:40px ;
+    width: 150px;
+    height: 50px;
+    font-size: 600;
+  }
+  .bttn-2:hover{
+    background-color: #705a94;
+    color: white;
+  }
+  .quantity-buttons {
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px; */
+  }
+  
+  .quantity-button {
+    /* margin: 0 5px; */
+  }
+  

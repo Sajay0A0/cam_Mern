@@ -1,0 +1,25 @@
+.edit{
+    width: 200px;
+    height: 30px;
+    margin-right:7px;
+    border-radius: 5px;
+}
+
+.img{
+
+    margin: 12px 0px;
+    width: 60px;
+    height: 70px;
+}
+.btn1,.btn2,.btn3,.btn4
+{
+    width: 60px;
+    height: 30px;
+    margin-right: 8px;
+    border-radius: 8px;
+}
+.adnav{
+    margin-left: -10px;
+    padding-right: 60px;
+    border-bottom: solid 1px #ddd;
+}

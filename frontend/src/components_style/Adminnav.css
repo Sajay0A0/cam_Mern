@@ -1,0 +1,14 @@
+.addpro{
+    height: auto;
+    width: 290px;
+    margin: auto;
+    
+}
+
+.link{
+    margin-left: 25%;
+    font-weight: bolder;
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+}

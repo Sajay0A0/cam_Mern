@@ -1,0 +1,54 @@
+
+/* .div1{
+    display:'flex';
+    position:'fixed';
+    z-index: 2;
+} */
+
+
+.item{
+    text-decoration: none;
+    display: block;
+    color: black;
+    padding: 13px 0 0 13px;
+  
+ 
+
+}
+
+.item:hover{
+    box-shadow: 0 0 10px black ;
+    border-radius: 8px;
+  
+}
+.color{
+    background-color: 	#BB96F7;
+}
+.login-1:hover{
+       background-color: black;
+       color: white; 
+}
+.logout-1:hover{
+    background-color: black;
+    color: white; 
+}
+/* .home{
+    color: aliceblue;
+    cursor: pointer;
+    position: relative;
+}
+
+.home::before{
+    content: "";
+    position:absolute;
+    width: 52px;
+    height: 3px;
+    bottom: 4px;
+    margin-right: 50%;
+    transform: scaleX(0);
+    background-color: black;
+    transition: all 0.5s;
+}
+.home:hover::before{
+    transform: scaleX(1);
+} */
