@@ -1,17 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import axios from "axios";
-import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { myContext } from "./Context";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const {logUser,setLogUser}=useContext(myContext)
-
+  const { logUser, setLogUser } = useContext(myContext);
   const navigate = useNavigate();
 
   axios.defaults.withCredentials = true;
+
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
@@ -26,58 +27,88 @@ function Login() {
           localStorage.setItem("authToken", res.data.authToken);
           localStorage.setItem("userEmail", email);
           localStorage.setItem("userId", res.data.userId);
-          
+
           console.log("authToken", localStorage.getItem("authToken"));
           console.log("res", res.data.user);
-          alert("Login successful--!");
-          setLogUser(res.data.user)
+          toast.success('Login successful!', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+          setLogUser(res.data.user);
           navigate("/");
-        }
-        if (!res.data.success) {
-          alert("Enter valid credentials...!");
+        } else {
+          toast.error("Enter valid credentials!", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        toast.error("An error occurred. Please try again.", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      });
   };
-console.log("log",logUser);
-  return (
-    <div className="d-flex justify-content-center  align-items-center  vh-100 ">
-      <div className="bg-white p-5 rounded " style={{border:'solid 1px black'}}>
-        <h2>Login</h2>  
 
+  console.log("log", logUser);
+  return (
+    <div className="d-flex justify-content-center align-items-center vh-100">
+      <div className="bg-white p-5 rounded w-25" style={{border: 'solid 1px black'}}>
+        <h2>Login</h2>  
         <form onSubmit={handleSubmit}>
-          <div className="mb-3 ">
+          <div className="mb-3">
             <label htmlFor="email">
               <strong>Email</strong>
             </label>
-            <input style={{width:'17rem'}}
+            <input 
               type="email"
               placeholder="enter email"
               autoComplete="off"
               name="email"
               className="form-control rounded"
               onChange={(e) => setEmail(e.target.value)}
+              value={email}
             />
           </div>
-
           <div className="mb-3">
             <label htmlFor="password">
               <strong>Password</strong>
             </label>
-            <input style={{width:'17rem'}}
+            <input 
               type="password"
               placeholder="enter password"
               name="password"
               className="form-control rounded"
               onChange={(e) => setPassword(e.target.value)}
+              value={password}
             />
           </div>
-          <button type="submit" className="btn btn-success w-100 rounded ">
+          <button type="submit" className="btn btn-success w-100 rounded">
             Login
           </button>
         </form>
         <p>
-          Not registerd...?please
+          Not registered...? Please
           <Link
             to="/signup"
             style={{
@@ -86,17 +117,15 @@ console.log("log",logUser);
               color: "black",
             }}
           >
-            {" "}
             Signup
           </Link>
         </p>
         <Link
           to="/signup"
-          className="btn btn-defualt border w-100  rounded text-decoration-none"
-          style={{backgroundColor:'#bb96f7'}}
+          className="btn btn-default border w-100 rounded text-decoration-none"
+          style={{backgroundColor: '#bb96f7'}}
         >
-          sign up
-          
+          Sign up
         </Link>
       </div>
     </div>

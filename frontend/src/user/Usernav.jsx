@@ -82,10 +82,12 @@ export default function Usernav() {
     const authLink = (
     
       <div className="">
-        <div className='pop'>
-          <Link  onClick={click} className=''>
+        <div className='pop me-2'>
+          <Link  onClick={click} className='me-2'>
           <AccountCircleIcon sx={{fontSize:'60px', color:'black'}}/>
           </Link>
+
+          <Link className='btn border-secondary text-secondary login-1' to='/adlogin' style={{fontWeight:'500'}}>Admin</Link>
           
           <div>
             {popup?

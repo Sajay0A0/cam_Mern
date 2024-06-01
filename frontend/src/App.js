@@ -48,6 +48,9 @@ import Nikon from "./brand/Nikon";
 import Canon from "./brand/Canon";
 import Placedorder from "./user/Placedorder";
 import Placedall from "./user/Placedall";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 function App() {
@@ -119,6 +122,7 @@ const fetchProduct=async()=>{
     <div>
       <myContext.Provider value={val}>
         <BrowserRouter>
+
           <Routes>
             <Route path="/signup" element={<Signup />}></Route>
             <Route path="/login" element={<Login />}></Route>
@@ -167,6 +171,7 @@ const fetchProduct=async()=>{
             <Route path="/palacedorder" element={<Placedorder/>}/>
             <Route path="/placedall" element={<Placedall/>}/>
           </Routes>
+          <ToastContainer/>
         </BrowserRouter>
       </myContext.Provider>
     </div>

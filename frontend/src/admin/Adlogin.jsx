@@ -36,8 +36,8 @@ function Adlogin(){
 
 
     return(
-        <div className="d-flex justify-content-center align-items-center bg-secondary vh-100-">
-            <div className="bg-white p-3 rounded w-25">
+        <div className="d-flex justify-content-center align-items-center vh-100  ">
+            <div className="bg-white p-5 rounded w-25"  style={{border:'solid 1px black'}}>
                 <h2>Admin login</h2>
 
                 <form onSubmit={handleSubmit}>
@@ -47,7 +47,7 @@ function Adlogin(){
                         </label>
                         <input type="email" placeholder="enter email"
                         autoComplete="off" name="adEmail"
-                        className="form-control rounded-0"
+                        className="form-control rounded"
                         onChange={(e)=>setAdemail(e.target.value)} />
                     </div>
                     <div className="mb-3">
@@ -55,10 +55,10 @@ function Adlogin(){
                             <strong>Password</strong>
                         </label>
                         <input type="password" placeholder="enter password"
-                        name="adPassword" className="form-control rounded-0"
+                        name="adPassword" className="form-control rounded"
                         onChange={(e)=>setAdpassword (e.target.value)}/>
                     </div>
-                    <button type="submit" className="btn btn-success w-100 rounded-0">
+                    <button type="submit" className="btn btn-success w-100 rounded">
                     Login
                 </button>
                 </form>
