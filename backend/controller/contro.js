@@ -348,7 +348,7 @@ const addAddress = async (req, res) => {
 
 const getAddress =async (req,res)=>{
   const {email}=req.body;
-  console.log("getA",req.body);
+  // console.log("getA",req.body);
   try {
     const user=await User.findOne({mail:email});
     if(!user){
@@ -430,36 +430,68 @@ const updateAddress = async (req, res) => {
 
 const prodSummery = async (req, res) => {
   try {
-    const { userEmail, productId } = req.body;
+      const { userEmail, product, address } = req.body;
+      console.log("summery",req.body);
 
-    if (!userEmail || !productId) {
-      return res.status(400).json({ message: "Missing required fields" });
-    }
 
-    const user = await User.findOne({ mail: userEmail });
+      if (!userEmail || !product || !address) {
+          return res.status(400).json({ message: "Missing required fields" });
+      }
 
-    if (!user) {
-      return res.status(404).json({ message: "User not found" });
-    }
+      const user = await User.findOne({ mail: userEmail });
 
-    const productExists = user.placed.some(item => item.productId === productId);
+      if (!user) {
+          return res.status(404).json({ message: "User not found" });
+      }
 
-    if (productExists) {
-      return res.status(409).json({ message: "Product already added" });
-    }
+      user.summary.push({
+          product,
+          address,
+          date: new Date()
+      });
 
-    user.placed.push({
-      productId,
-    });
+      await user.save();
 
-    // Save the updated user document
-    await user.save();
-
-    res.status(200).json({ message: "Successfully added" });
+      res.status(200).json({ message: "Order placed successfully" });
   } catch (error) {
-    console.error("Error adding product to placed orders:", error);
-    res.status(500).json({ message: "Unable to add product to placed orders", error });
+      console.error("Error placing order:", error);
+      res.status(500).json({ message: "Unable to place order", error });
   }
+};
+
+// const getProdSummery = async (req,res)=>{
+//    const {userEmail}=req.body;
+//    try {
+//     const user= await User.find({mail:userEmail});
+//     if(!user){
+//       return res.status(404).send("user not found");
+//     }
+//     const summeryItem=user.summary;
+//     res.status(202).send({success:true,summeryItem});
+//    } catch (error) {
+//     console.log(error);
+//     res.status(500).send("internal server error")
+    
+//    }
+// }
+
+const getProdSummery = async (req,res)=>{
+
+const { email } = req.body;
+if (!email) {
+    return res.status(400).json({ message: "Email is required" });
+}
+
+try {
+    const user = await User.findOne({ mail: email });
+    if (!user) {
+        return res.status(404).json({ message: "User not found" });
+    }
+    res.status(200).json({ summeryItem: user.summary });
+} catch (error) {
+    console.error("Error fetching summary:", error);
+    res.status(500).json({ message: "Unable to fetch summary", error });
+}
 };
 
 
@@ -482,4 +514,5 @@ module.exports={
   deleteAddress,
   updateAddress,
   prodSummery,
+  getProdSummery
 };

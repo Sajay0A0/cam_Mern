@@ -31,10 +31,10 @@ export default function About(){
           <MDBCardBody>
             <MDBCardTitle style={{fontFamily:"Nova Square",fontWeight:'bolder',fontSize:'40px'}}>Our journey began in 2024</MDBCardTitle>
             <MDBCardText style={{fontSize:'19px',paddingTop:'35px'}}>
-            FOTOCENTRE TRADING Co. was established in 1991 with the objective of providing sales service for Digital Camera, SLR Camera, Handycam, their accessories and all other related products. In the year of 2010 , it was incorporated to FOTOCENTRE TRADING PVT. LTD.
+            CLICK A PICK Co. was established in 2024 with the objective of providing sales service for Digital Camera, DSLR Camera, Handycam, their accessories and all other related products. it was incorporated to  CLICK A PICK PVT. LTD.
             </MDBCardText>
             <MDBCardText style={{fontSize:'19px', paddingTop:'20px'}} >
-            FOTOCENTRE TRADING PVT. LTD. is an organization aided with young, dynamic & dedicated people. Since it’s inception, the sincere efforts of our personnel are directed towards achieving maximum customer satisfaction            
+            CLICK A PICK PVT. LTD. is an organization aided with young, dynamic & dedicated people. Since it’s inception, the sincere efforts of our personnel are directed towards achieving maximum customer satisfaction            
             </MDBCardText>
           </MDBCardBody>
         </MDBCol>
@@ -42,15 +42,15 @@ export default function About(){
     </MDBCard>
     <div style={{padding:'20px 65px 0 65px',fontSize:'19px',}}>
     <p>We allot top priority to innovation & upgradation of technology in the avenues of Distribution of All kinds and brands of Digital Camera and their related accessories.</p>
-    <p>We at FOTOCENTRE TRADING PVT. LTD. believe in providing good quality products & after sales service in real sense. Our responsibility does not end with just the sale of a product, rather, it begins with it and lasts until the product functioning is in accordance with our valued customer’s satisfaction.</p>
-    <p>We at FOTOCENTRE TRADING PVT. LTD. believe in providing good quality products & after sales service in real sense. Our responsibility does not end with just the sale of a product, rather, it begins with it and lasts until the product functioning is in accordance with our valued customer’s satisfaction.</p>
+    <p>We at  CLICK A PICK PVT. LTD. believe in providing good quality products & after sales service in real sense. Our responsibility does not end with just the sale of a product, rather, it begins with it and lasts until the product functioning is in accordance with our valued customer’s satisfaction.</p>
+    <p>We at CLICK A PICK PVT. LTD. believe in providing good quality products & after sales service in real sense. Our responsibility does not end with just the sale of a product, rather, it begins with it and lasts until the product functioning is in accordance with our valued customer’s satisfaction.</p>
     <p>Why We :- The company’s philosophy stands on the pedestal of Quality, Commitment & Excellence.</p>
     <p>Management’s Philosophy is to continuously invest financial resources to develop new markets and products thus providing products and services of the highest quality to its customers.</p>
     <p>Quality :- Every job is a self portrait of the person who does it. Quality is the essence of good works. It is the stepping stone to success. Because only quality can lead to achievement.</p>
-    <p>Commitment :- Commitment is what transforms a promise into reality. It is the words that speak boldly of our intentions. And action that speaks louder than works. It is making the time when there is none. Commitment at FOTOCENTRE is the power to change the face of things.</p>
+    <p>Commitment :- Commitment is what transforms a promise into reality. It is the words that speak boldly of our intentions. And action that speaks louder than works. It is making the time when there is none. Commitment at fotocentre is the power to change the face of things.</p>
     <p>Excellence :- Going far beyond the call of duty, doing more than others expect….. this is what excellence is all about. And it comes from striving, maintaining the highest standards, looking after the smallest detail, going that extra mile. We strongly believe that Excellence means doing our very best in everything, in every way.</p>
     </div>
-    <div  style={{display: "flex",flexWrap: "wrap",paddingLeft: "60px",marginTop: "20px",}}>
+    {/* <div  style={{display: "flex",flexWrap: "wrap",paddingLeft: "60px",marginTop: "20px",}}>
 
           <Card className="adl_img"style={{ width: "17rem", height: "21rem", marginBottom: "8px" }}>
               <Card.Img
@@ -79,8 +79,9 @@ export default function About(){
              
             </Card.Body>
           </Card>
-          </div><br />
+          </div><br /> */}
 
+        <br />
         <Footer/>
       
         </div>

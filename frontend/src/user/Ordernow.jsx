@@ -5,6 +5,8 @@ import '../components_style/Order.css';
 import Usernav from "./Usernav";
 import Footer from "./Footer";
 import { myContext } from "./Context";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 export default function Ordernow() {
@@ -122,10 +124,23 @@ export default function Ordernow() {
     }
 };
 
-function bynow(id){
-  alert(`order place now`)
-  Navigate(`/byproduct/${id}`)
+function bynow() {
+  toast.success('Order placed successfully!', {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+  });
+  setTimeout(() => {
+    Navigate(`/byproduct/${id}`)
+  }, 2000);  
 }
+ 
+
 
 useEffect (()=>{
   fetchCart();
@@ -251,6 +266,7 @@ const cartProducts = cart.map(cartItem => {
       
       <button style={{marginTop:'60px',width:'250px',height:'50px',borderRadius:'10px',marginLeft:'130px'}} onClick={()=>bynow(productData._id)}>
         By now</button>
+        <ToastContainer/>
         </div><br />
     </div>
   );

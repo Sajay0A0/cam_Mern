@@ -33,7 +33,7 @@ function Signup() {
                 });
                 setTimeout(() => {
                     navigate('/login');
-                }, 2000); // Add a delay to allow the user to see the toast notification
+                }, 2000);
             } else {
                 toast.error("Enter valid credentials", {
                     position: "top-center",

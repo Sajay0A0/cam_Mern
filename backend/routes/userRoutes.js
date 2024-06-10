@@ -18,13 +18,13 @@ router.post('/deletecart',userController.deleteCartItem)
 router.post('/addlike',userController.addLike);
 router.post('/getlike',userController.getLike);
 router.post('/summery',userController.prodSummery);
+router.post('/getsummery',userController.getProdSummery);
 
 router.post('/addAddress',userController.addAddress);
 router.post('/getAddress',userController.getAddress);
 router.post('/deleteAddress/:email',userController.deleteAddress);
 router.post('/updateAddress/:email',userController.updateAddress);
 
-// router.post('/increaseqnty',userController.increasQuantity);
 
 // router.post('/adsign',adminController.admin);
 router.post('/adlogin',adminController.loginAdmin);

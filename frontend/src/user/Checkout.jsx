@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import '../components_style/Order.css';
 import Usernav from "./Usernav";
 import { myContext } from "./Context";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Checkout(){
     const { product, setProduct, cart, setCart } = useContext(myContext);
@@ -13,7 +15,7 @@ export default function Checkout(){
     const [state, setState] = useState("");
     const [city, setCity] = useState("");
     const [pin, setPin] = useState("");
-    const [editEmail, setEditEmail] = useState(""); // New state variable for editing email
+    const [editEmail, setEditEmail] = useState(""); 
     const navigate = useNavigate();
     const [cartTotal, setCartTotal] = useState(0);
 
@@ -140,8 +142,19 @@ export default function Checkout(){
     };
 
     function bynow() {
-        alert('order place now');
-        navigate('/buyallprod');
+        toast.success('Order placed successfully!', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
+        setTimeout(() => {
+            navigate('/buyallprod');
+        }, 2000);  
     }
 
     return (
@@ -353,6 +366,7 @@ export default function Checkout(){
                 >
                     Buy Now
                 </button>
+                <ToastContainer/>
             </div><br />
         </div>
     );

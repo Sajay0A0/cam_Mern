@@ -50,6 +50,8 @@ import Placedorder from "./user/Placedorder";
 import Placedall from "./user/Placedall";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Fujifilm from "./brand/Fujifilm";
+import Sony from "./brand/Sony";
 
 
 
@@ -161,6 +163,8 @@ const fetchProduct=async()=>{
             <Route path="/softbox" element={<Softbox/>}/>
             <Route path="/nikon" element={<Nikon/>}/>
             <Route path="/canon" element={<Canon/>}/>
+            <Route path="/fujifilm" element={<Fujifilm/>}/>
+            <Route path="/sony" element={<Sony/>}/>
             <Route path="/sndmail" element={<Emailform/>}/>
             <Route path="/usercart" element={<Allcart/>}/>
             <Route path="/main" element={<Main/>}/>

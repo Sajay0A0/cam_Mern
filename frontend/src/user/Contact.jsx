@@ -60,7 +60,7 @@ export default function Contact(){
 
                <b> Monday to Saturday:</b><br /><br />
 
-                10 am – 6 pm
+                 9 am – 6 pm
                 </Card.Text>
             </Card>
         </div>
