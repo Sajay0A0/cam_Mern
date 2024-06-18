@@ -69,6 +69,8 @@ export default function Checkout(){
             
         };
     });
+    console.log("quantity",cartProducts);
+
 
     const addAddress = async () => {
         try {

@@ -52,6 +52,18 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Fujifilm from "./brand/Fujifilm";
 import Sony from "./brand/Sony";
+import Horizon from "./user/Slidingimg";
+import Sigma from "./brand/Sigma";
+import Sirui from "./brand/Sirui";
+import Dji from "./brand/Dji";
+import Feelworld from "./brand/Feelworld";
+import Godox from "./brand/Godox";
+import Boya from "./brand/Boya";
+import Tokina from "./brand/Tokina";
+import Smallring from "./brand/Smallring";
+import Tethertool from "./brand/Tethertool";
+import Easycover from "./brand/Easycover";
+import Loading from "./user/Loading";
 
 
 
@@ -77,6 +89,7 @@ function App() {
   const [brand,setBrand]=useState('');
   const [reverse,setReverse]=useState(false);
   const [checkout,setCheckout]=useState([])
+  const [loading,setLoading]=useState(true)
 
 
 
@@ -94,6 +107,12 @@ const fetchProduct=async()=>{
         
     }
 };
+
+useEffect(()=>{
+  setTimeout(() => {
+    setLoading(false)
+  }, 2500);
+})
 
   const val = {
     product,setProduct,
@@ -117,11 +136,15 @@ const fetchProduct=async()=>{
     like,setLike,
     reverse,setReverse,
     logUser,setLogUser,
-    checkout,setCheckout
+    checkout,setCheckout,
+    loading,setLoading
   };
 
   return (
     <div>
+      {loading ? (
+        <Loading/>
+      ):(
       <myContext.Provider value={val}>
         <BrowserRouter>
 
@@ -165,6 +188,16 @@ const fetchProduct=async()=>{
             <Route path="/canon" element={<Canon/>}/>
             <Route path="/fujifilm" element={<Fujifilm/>}/>
             <Route path="/sony" element={<Sony/>}/>
+            <Route path="/sigma" element={<Sigma/>}/>
+            <Route path="/sirui" element={<Sirui/>}/>
+            <Route path="/dji" element={<Dji/>}/>
+            <Route path="/feelworld" element={<Feelworld/>}/>
+            <Route path="/godox" element={<Godox/>}/>
+            <Route path="/boya" element={<Boya/>}/>
+            <Route path="/tokina" element={<Tokina/>}/>
+            <Route path="/smallring" element={<Smallring/>}/>
+            <Route path="/tethertool" element={<Tethertool/>}/>
+            <Route path="/easycover" element={<Easycover/>}/>
             <Route path="/sndmail" element={<Emailform/>}/>
             <Route path="/usercart" element={<Allcart/>}/>
             <Route path="/main" element={<Main/>}/>
@@ -174,10 +207,13 @@ const fetchProduct=async()=>{
             <Route path="/buyallprod" element={<Buyallprod/>}/>
             <Route path="/palacedorder" element={<Placedorder/>}/>
             <Route path="/placedall" element={<Placedall/>}/>
+            <Route path="/sliding" element={<Horizon/>}/>
+
           </Routes>
           <ToastContainer/>
         </BrowserRouter>
       </myContext.Provider>
+      )}
     </div>
   );
 }

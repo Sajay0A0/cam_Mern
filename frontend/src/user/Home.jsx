@@ -80,24 +80,15 @@ navigate(`/descript/${productId}`)
       <div>
         <h1
           className="title text-center "
-          style={{
-            fontFamily: "Nova Square",
-            display: "flex",
-            position: "absolute",
-            zIndex: 2,
-            color: "white",
-            marginLeft: "8%",
-            fontSize: "120px",
-            marginTop: "10%",
-          }}
-        >
+          style={{fontFamily: "Nova Square",display: "flex",position: "absolute",zIndex: 2,
+          color: "white",marginLeft: "8%",fontSize: "120px",marginTop: "10%",textShadow:'0 0 15px black'}}>
           C L I C K
         </h1>
         <img
           src="https://previews.123rf.com/images/norgal/norgal1909/norgal190900012/129916433-photography-gear-on-wooden-table-digital-camera-lens-and-other-accessories.jpg"
           alt="pic"
           className="w-100"
-          style={{ height: "13cm", filter: "brightness(0.5)" }}
+          style={{ height: "15cm", filter: "brightness(0.5)" }}
         />
 
         <div
@@ -251,7 +242,7 @@ navigate(`/descript/${productId}`)
         </MDBCol>
         <MDBCol md='8'>
           <MDBCardBody>
-            <MDBCardTitle style={{ marginTop:'20px',textAlign:'center',fontSize:'40px'}}>Card title</MDBCardTitle>
+            <MDBCardTitle style={{ marginTop:'20px',textAlign:'center',fontSize:'40px'}}>All Products</MDBCardTitle>
             <MDBCardText>
               This is a wider card with supporting text below as a natural lead-in to additional content. This
               content is a little bit longer.

@@ -58,7 +58,7 @@
 }
 
 .pop-logout:hover {
-  box-shadow: 0 0 20px black; 
+  box-shadow: 0 0 20px rgb(192, 171, 171); 
   background-color: rgb(213, 47, 17);
   color: black;
 }

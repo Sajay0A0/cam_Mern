@@ -50,8 +50,8 @@ export default function Recoder(){
            Recorders
           </h1>
           <img 
-            src="https://images.pexels.com/photos/2183972/pexels-photo-2183972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt="pic" className="w-100" style={{ height: "14cm", filter:'brightness(0.6)'}}/>
+            src="https://lensvid.com/wp-content/uploads/2014/05/Zoom-H5-canon.jpg"
+            alt="pic" className="w-100" style={{ height: "15cm", filter:'brightness(0.6)'}}/>
               <div style={{ display: "flex", flexWrap: "wrap", paddingLeft: "50px", marginTop: "60px",}}>
               { record.map((product) => (
               <Card

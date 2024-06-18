@@ -23,16 +23,19 @@ export default function Usernav() {
   const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
 
   const pathtomap = {
-    dsl: '/dslr',
-    lig: '/lights',
-    len: '/lenses',
-    mic: '/audio',
-    cam: '/camera',
-    ds: '/dslr',
-    nik: '/nikon',
+    lig: '/lights',god: '/godox',
+    len: '/lenses',boy: '/boya',
+    mic: '/audio',tok: '/tokina',
+    cam: '/camera',sma: '/smallring',
+    ds: '/dslr',tet: '/tethertool',
+    nik: '/nikon',eas: '/easycover',
     can: '/canon',
     fuj: '/fujifilm',
     son: '/sony',
+    sig: '/sigma',
+    sir: '/sirui',
+    dji: '/dji',
+    feel: '/feelworld',
   };
 
   const handleSearch = () => {
@@ -102,10 +105,10 @@ export default function Usernav() {
                 </div>
                 <p className="pop-p">hey {logUser && logUser.name} ...!</p>
 
-                <Link className="btn border-secondary text-secondary login-1" to="/placedall" style={{ fontWeight: '500' }}>
+                <Link className="btn border-secondary  link-1" to="/placedall" style={{ fontWeight: '500' }}>
                   Orders
                 </Link>
-                <Link className="btn border-secondary text-secondary login-1" to="/adlogin" style={{ fontWeight: '500' }}>
+                <Link className="btn border-secondary  link-2" to="/adlogin" style={{ fontWeight: '500' }}>
                   Admin
                 </Link>
 

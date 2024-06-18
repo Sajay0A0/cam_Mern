@@ -59,8 +59,8 @@ export default function Dslrlenses(){
            DSLR <br />Lenses
         </h1>
         <img 
-          src="https://img.ozphotovideos.com/wp-content/uploads/2019/10/commercial-photography-setup.jpg"
-          alt="pic" className="w-100" style={{ height: "14cm", filter:'brightness(0.6)'}}/>
+          src="https://images.pexels.com/photos/1088491/pexels-photo-1088491.jpeg?auto=compress&cs=tinysrgb&w=600"
+          alt="pic" className="w-100" style={{ height: "15cm", filter:'brightness(0.6)'}}/>
             <div style={{ display: "flex", flexWrap: "wrap", paddingLeft: "50px", marginTop: "60px",}}>
             { dslrlens.map((product) => (
             <Card

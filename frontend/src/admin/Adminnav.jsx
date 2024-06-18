@@ -8,8 +8,8 @@ export default function Adminnav(){
     return(
         <div>
             <Adminnavbar/>
-            <h2>hello admin</h2>
-
+            {/* <h2>hello admin</h2> */}
+            <div style={{margin:'40px'}}></div>
         
             <div className="addpro"  >
                 <Link className="btn border-dark link" to={"/addproduct"} style={{paddingTop:'10px',paddingLeft:'30px',display:'flex',}}>Add Product</Link>

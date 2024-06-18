@@ -13,15 +13,15 @@ import axios from "axios";
 import { Checkbox } from "@mui/material";
 
 
-export default function Led(){
+export default function Easycover(){
 
   const {product,cart,setCart,like,setLike}=useContext(myContext)
   const navigate=useNavigate()
   const email=localStorage.getItem("userEmail")
 
-    const led=product.filter((p)=>
-    p.specify==="led")
-    console.log("led",product,led);
+    const easycover=product.filter((p)=>
+    p.brand==="easycover")
+    console.log("easycover",product,easycover);
 
     function handleClick(productId){
       navigate(`/descript/${productId}`)
@@ -50,13 +50,13 @@ export default function Led(){
             <h1
           className="title text-center "
           style={{display: "flex",position: "absolute",zIndex: 2,color: "white", marginLeft: "8%", fontSize: "120px",marginTop: "10%",}}>
-          LED & <br /> LED Panel
+       EasyCover 
         </h1>
         <img 
-          src="https://blogstudio.s3.amazonaws.com/lumecube/cdf67fabf26a8a23a4ae6268dda7a809.jpg"
-          alt="pic" className="w-100" style={{ height: "15cm", filter:'brightness(0.6)'}}/>
+          src="https://images.pexels.com/photos/2183972/pexels-photo-2183972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt="pic" className="w-100" style={{ height: "14cm", filter:'brightness(0.6)'}}/>
             <div style={{ display: "flex", flexWrap: "wrap", paddingLeft: "50px", marginTop: "60px",}}>
-            { led.map((product) => (
+            { easycover.map((product) => (
             <Card
               className="body"
               style={{ width: "18rem", padding: "10px 13px" }}>

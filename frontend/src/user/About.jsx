@@ -20,7 +20,7 @@ export default function About(){
         </h1>
         <img 
           src="https://images.pexels.com/photos/1447260/pexels-photo-1447260.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          alt="pic" className="w-100" style={{ height: "13cm", filter:'brightness(0.5)'}}/>
+          alt="pic" className="w-100" style={{ height: "14cm", filter:'brightness(0.7)'}}/>
 
       <MDBCard border="light" style={{ maxWidth: '100%',paddingRight:'50px',paddingLeft:'50px', paddingTop:'30px', }}>
       <MDBRow className='g-0'>

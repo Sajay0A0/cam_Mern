@@ -24,11 +24,18 @@
 .color{
     background-color: 	#BB96F7;
 }
-.login-1:hover{
+.link-1{
+    margin-right: 10px;
+}
+.link-1:hover{
+    background-color: #BB96F7;
+    color: black; 
+}
+.link-2:hover{
        background-color: black;
        color: white; 
 }
-.logout-1:hover{
+.login-1:hover{
     background-color: black;
     color: white; 
 }

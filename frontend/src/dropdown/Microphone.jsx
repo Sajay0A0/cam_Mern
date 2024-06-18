@@ -17,9 +17,9 @@ export default function Microphone(){
     const navigate=useNavigate()
     const email=localStorage.getItem("userEmail")
 
-    const Microphn=product.filter ((p)=>
-    p.specify ==="Microphn")
-    console.log("Microphn",product,Microphn);
+    const microphn=product.filter ((p)=>
+    p.specify ==="microphn")
+    console.log("microphn",product,microphn);
 
     function handleClick(productId){
         navigate(`/descript/${productId}`)
@@ -47,10 +47,10 @@ export default function Microphone(){
             style={{display: "flex",position: "absolute",zIndex: 2,color: "white", marginLeft: "8%", fontSize: "120px",marginTop: "10%",}}>
                 Microphone 
             </h1>
-            < img src="https://images.pexels.com/photos/2183972/pexels-photo-2183972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt="pic" className="w-100" style={{ height: "14cm", filter:'brightness(0.6)'}}/>
+            < img src="https://images.pexels.com/photos/3710191/pexels-photo-3710191.jpeg?auto=compress&cs=tinysrgb&w=600https://images.pexels.com/photos/2183972/pexels-photo-2183972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="pic" className="w-100" style={{ height: "16cm", filter:'brightness(0.6)'}}/>
 <div style={{ display: "flex", flexWrap: "wrap", paddingLeft: "50px", marginTop: "60px",}}>
-            { Microphn.map((product) => (
+            { microphn.map((product) => (
             <Card
               className="body"
               style={{ width: "18rem", padding: "10px 13px" }}>

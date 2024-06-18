@@ -61,7 +61,7 @@ export default function Buyallprod(){
 
     const closePopup = () => {
         setPopupVisible(false);
-        navigate('/placedall', { state: { orderedProducts: cartProducts, address: mainAddress[0] } });
+        navigate('/', { state: { orderedProducts: cartProducts, address: mainAddress[0] } });
     };
 
     return (

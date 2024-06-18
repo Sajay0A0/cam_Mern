@@ -1,20 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useLocation } from "react-router-dom";
 import Usernav from './Usernav';
 import "../components_style/Placed.css";
 
 export default function OrderSummary() {
     const [summary, setSummary] = useState([]);
     const email = localStorage.getItem("userEmail");
-    const location = useLocation();
-    const { productData } = location.state || []; 
 
     useEffect(() => {
-        if (!productData && email) {
+        if (email) {
             fetchSummary();
         }
-    }, [email, productData]);
+    }, [email]);
 
     const fetchSummary = async () => {
         try {
@@ -30,9 +27,8 @@ export default function OrderSummary() {
             console.error("Error fetching summary:", error);
         }
     };
-    console.log("summery",summary);
 
-    console.log("product data", productData);
+    console.log("Summary:", summary);
 
     return (
         <div>
@@ -40,7 +36,6 @@ export default function OrderSummary() {
             <h2>Order Summary</h2>
             {summary.length > 0 ? (
                 <div>
-
                     {summary.map((order, index) => (
                         <div key={index} className='prod-address'>
                             <div>
@@ -60,35 +55,15 @@ export default function OrderSummary() {
                                                 </tr>
                                             ))
                                         ) : (
-                                            productData && (
-                                                <tr key="productData">
-                                                    <td><img style={{width:'200px',margin:'0 0 0 15px'}} src={productData.image} alt={productData.prod_name} className="product-image" /></td>
-                                                    <td className='product-name'>{productData.prod_name}</td>
-                                                    <td className='product-qty'>Quantity: {productData.quantity || 1}</td>
-                                                    <td className='product-price'>Price: ₹{productData.price}</td>
-                                                </tr>
-                                            )
+                                            <tr key="noProduct">
+                                                <td colSpan="4">No products found in this order.</td>
+                                            </tr>
                                         )}
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     ))}
-                </div>
-            ) : productData ? (
-                <div>
-                    <div className="products-list">
-                        <table>
-                            <tbody>
-                                <tr key="productData">
-                                    <td><img style={{width:'200px',margin:'0 0 0 15px'}} src={productData.image} alt={productData.prod_name} className="product-image" /></td>
-                                    <td className='product-name'>{productData.prod_name}</td>
-                                    <td className='product-qty'>Quantity: {productData.quantity || 1}</td>
-                                    <td className='product-price'>Price: ₹{productData.price}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
                 </div>
             ) : (
                 <p>No previous orders found.</p>

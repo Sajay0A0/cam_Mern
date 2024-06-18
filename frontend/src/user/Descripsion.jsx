@@ -38,12 +38,11 @@ const productId=Productdetails._id
     return(
         <div >
             <Usernav/>
-            
-            <h1>hello</h1>
+            <br />
             <div
           style={{display: "flex",flexWrap: "wrap",paddingLeft: "100px",marginTop: "20px",}}>
             {/* <div style={{border:'solid 1px black',margin:'0% 60% 0 10%',paddingLeft:'30px'}}> */}
-            <img style={{width:'30rem',border:'solid 1px black',marginLeft:'90px',borderRadius:"8px"}} src={Productdetails.image} alt="pic" />
+            <img style={{width:'30rem',marginLeft:'90px',borderRadius:"8px"}} src={Productdetails.image} alt="pic" />
             
            
                 <span style={{paddingLeft:'10%'}}></span>
@@ -61,6 +60,7 @@ const productId=Productdetails._id
                 </ul>
             
             </div>
+            <br />
            
 
             <Footer/>

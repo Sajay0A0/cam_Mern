@@ -35,15 +35,8 @@ function Signup() {
                     navigate('/login');
                 }, 2000);
             } else {
-                toast.error("Enter valid credentials", {
+                toast.error(json.message || "Enter valid credentials", {
                     position: "top-center",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
                 });
             }
         })
@@ -51,13 +44,7 @@ function Signup() {
             console.log(err);
             toast.error("An error occurred. Please try again.", {
                 position: "top-center",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
+               
             });
         });
     }

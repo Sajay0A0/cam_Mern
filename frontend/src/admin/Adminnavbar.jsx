@@ -57,7 +57,7 @@ export default function Adminnavbar() {
                   </div>
                 </div>
                 <p className='pop-p'>Hello Admin!</p>
-                <Link onClick={adlogout}>
+                <Link to='/adlogin' onClick={adlogout}>
                   <span className='btn border-dark pop-logout me-2'>Logout</span>
                 </Link>
               </div>
@@ -89,8 +89,8 @@ export default function Adminnavbar() {
                 style={{ marginTop: '7px' }} to="/getuser">Add User</Link>
               <Link className="home me-5 text-dark text-decoration-none"
                 style={{ marginTop: '7px' }} to="/usercart">User Cart</Link>
-              <Link className="home me-5 text-dark text-decoration-none"
-                style={{ marginTop: '7px' }} to="/contact">Contact Us</Link>
+              {/* <Link className="home me-5 text-dark text-decoration-none"
+                style={{ marginTop: '7px' }} to="/contact">Contact Us</Link> */}
             </Nav>
             {adminAuth() ? adminLink : adLink}
           </Navbar.Collapse>

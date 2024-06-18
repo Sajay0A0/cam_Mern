@@ -8,19 +8,20 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { CiCreditCard1 } from "react-icons/ci";
 
 export default function Byproduct() {
-  const { product } = useContext(myContext);
+  const { product, cart } = useContext(myContext);
   const [mainAddress, setMainAddress] = useState([]);
   const [popupVisible, setPopupVisible] = useState(false);
+  const [productData, setProductData] = useState(null); // Initialize state for a single product
   const email = localStorage.getItem("userEmail");
   const { id } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
     fetchAddress();
-  }, []);
+    updateProductData();
+  }, [id, product, cart]);
 
   const userEmail = localStorage.getItem("userEmail");
-  const productData = product.find(prd => prd._id === id);
 
   const fetchAddress = async () => {
     try {
@@ -33,6 +34,21 @@ export default function Byproduct() {
     }
   };
 
+  const updateProductData = () => {
+    const cartItem = cart.find(item => item.productId === id);
+    if (cartItem) {
+      const selectedProduct = product.find(p => p._id === id);
+      if (selectedProduct) {
+        const updatedProduct = {
+          ...selectedProduct,
+          quantity: cartItem.quantity,
+          totalPrice: selectedProduct.price * cartItem.quantity,
+        };
+        setProductData(updatedProduct);
+      }
+    }
+  };
+
   const handlePlaceOrder = async () => {
     if (!productData || !mainAddress[0] || !email) {
       console.error("Missing required fields", { productData, mainAddress, email });
@@ -41,7 +57,7 @@ export default function Byproduct() {
 
     const orderData = {
       userEmail: email,
-      product: productData,
+      product: [productData], // Send an array with the single product
       address: mainAddress[0]
     };
 
@@ -59,7 +75,7 @@ export default function Byproduct() {
 
   const closePopup = () => {
     setPopupVisible(false);
-    navigate('/placedall', { state: { productData } });
+    navigate('/', { state: { productData } });
   };
 
   return (
@@ -97,20 +113,22 @@ export default function Byproduct() {
       </div>
       <div style={{ display: 'flex', flexBasis: 'column', gap: '20px', paddingLeft: '0%' }}>
         <table>
-          <tr style={{ border: 'solid 1px #BB96F7', borderRadius: '19px', marginTop: '0%', margin: '10% auto', maxWidth: '550px', width: '450px', display: 'flex', flexWrap: 'wrap', paddingTop: '0', marginTop: '20px', paddingLeft: '10px', marginLeft: '25px' }}>
-            <th scope="col">
-              <img src={productData.image} style={{ width: '60px' }} alt="pic" />
-            </th>
-            <th scope="col" style={{ paddingTop: '20px', paddingLeft: '30px' }}>
-              <h6>{productData.prod_name}</h6>
-            </th>
-            <th scope="col" style={{ paddingTop: '20px', paddingLeft: '40px' }}>
-              {productData.quantity || 1}
-            </th>
-            <th scope="col" style={{ paddingLeft: '100px', paddingTop: '20px' }}>
-              <h6>{productData.price}</h6>
-            </th>
-          </tr>
+          {productData && (
+            <tr style={{ border: 'solid 1px #BB96F7', borderRadius: '19px', marginTop: '0%', margin: '10% auto', maxWidth: '550px', width: '450px', display: 'flex', flexWrap: 'wrap', paddingTop: '0', marginTop: '20px', paddingLeft: '10px', marginLeft: '25px' }}>
+              <th scope="col">
+                <img src={productData.image} style={{ width: '60px' }} alt="pic" />
+              </th>
+              <th scope="col" style={{ paddingTop: '20px', paddingLeft: '30px' }}>
+                <h6>{productData.prod_name}</h6>
+              </th>
+              <th scope="col" style={{ paddingTop: '20px', paddingLeft: '40px' }}>
+                {productData.quantity || 1}
+              </th>
+              <th scope="col" style={{ paddingLeft: '100px', paddingTop: '20px' }}>
+                <h6>{productData.totalPrice || (productData.price * (productData.quantity || 1))}</h6>
+              </th>
+            </tr>
+          )}
         </table>
       </div>
       <div style={{ border: 'solid 1px black', maxWidth: '400px', margin: '1% auto', borderRadius: '8px', paddingBottom: '20px' }}>
@@ -136,7 +154,7 @@ export default function Byproduct() {
               </div>
               <input type="text" placeholder="MM/YY" style={{ width: '130px', margin: '0 0 20px 10px' }} />
               <input type="text" placeholder="CVV" style={{ width: '130px', margin: '0 0 20px 40px' }} />
-              <button className="btn btn-warning border-none" style={{ width: '300px', margin: '0 0 20px 15px' }} onClick={handlePlaceOrder}>pay ₹{productData.price}</button>
+              <button className="btn btn-warning border-none" style={{ width: '300px', margin: '0 0 20px 15px' }} onClick={handlePlaceOrder}>pay ₹{productData ? productData.totalPrice : 0}</button>
             </div>
           </div>
         </div>

@@ -60,7 +60,7 @@ import { Checkbox } from "@mui/material";
             Video <br /> Cameras
             </h1>
             <img src="https://img.ozphotovideos.com/wp-content/uploads/2019/10/commercial-photography-setup.jpg" alt="pic"
-            className="w-100" style={{height:"14cm",filter:"brightness(0.4)"}}/>
+            className="w-100" style={{height:"15cm",filter:"brightness(0.4)"}}/>
 
             <div style={{display:"flex",flexWrap:"wrap",paddingLeft:"50px",marginTop:"60px"}}>
             { vdeocam.map((product) => (

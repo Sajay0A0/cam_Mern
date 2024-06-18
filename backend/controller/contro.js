@@ -9,6 +9,13 @@ const jwtSecretKey = "sajay123";
 const createUser = async (req, res) => {
   let hashedPassword = await bcrypt.hash(req.body.password, 10);
   try {
+    // Check if a user with the given email already exists
+    const existingUser = await User.findOne({ mail: req.body.mail });
+    if (existingUser) {
+      return res.status(409).json({ success: false, message: "User with this email already exists" });
+    }
+
+    // Create a new user if no user with the given email exists
     await User.create({
       name: req.body.name,
       location: req.body.location,
@@ -18,9 +25,10 @@ const createUser = async (req, res) => {
     res.json({ success: true });
   } catch (error) {
     console.log(error);
-    res.json({ success: false });
+    res.status(500).json({ success: false, message: "An error occurred while creating the user" });
   }
 };
+
 
 const loginUser = async (req, res) => {
   try {

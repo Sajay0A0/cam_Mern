@@ -53,8 +53,8 @@ export default function Dslr(){
           DSLR<br /> Cameras
         </h1>
         <img 
-          src="https://images.pexels.com/photos/2183972/pexels-photo-2183972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          alt="pic" className="w-100" style={{ height: "14cm", filter:'brightness(0.6)'}}/>
+          src="https://images.pexels.com/photos/2929411/pexels-photo-2929411.jpeg?auto=compress&cs=tinysrgb&w=600"
+          alt="pic" className="w-100" style={{ height: "15cm", filter:'brightness(0.7)'}}/>
             <div style={{ display: "flex", flexWrap: "wrap", paddingLeft: "50px", marginTop: "60px",}}>
             { dslr.map((product) => (
             <Card

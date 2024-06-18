@@ -60,7 +60,7 @@ export default function Mirrless(){
         </h1>
         <img 
           src="https://images.pexels.com/photos/206501/pexels-photo-206501.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1  "
-          alt="pic" className="w-100" style={{ height: "14cm", filter:'brightness(0.5)'}}/>
+          alt="pic" className="w-100" style={{ height: "15cm", filter:'brightness(0.5)'}}/>
             <div style={{ display: "flex", flexWrap: "wrap", paddingLeft: "50px", marginTop: "60px",}}>
             { mirrorless.map((product) => (
             <Card

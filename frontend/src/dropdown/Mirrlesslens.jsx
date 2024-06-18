@@ -59,8 +59,8 @@ export default function Mirrlesslens(){
           Mirrorless <br /> Lenses
         </h1>
         <img 
-          src="https://img.ozphotovideos.com/wp-content/uploads/2019/10/commercial-photography-setup.jpg"
-          alt="pic" className="w-100" style={{ height: "14cm", filter:'brightness(0.4)'}}/>
+          src="https://images.pexels.com/photos/5687130/pexels-photo-5687130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt="pic" className="w-100" style={{ height: "15cm", filter:'brightness(0.5)'}}/>
             <div style={{ display: "flex", flexWrap: "wrap", paddingLeft: "50px", marginTop: "60px",}}>
             { Mirrlesslens.map((product) => (
             <Card

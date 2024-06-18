@@ -53,8 +53,8 @@ export default function Accessory(){
           Accessories
         </h1>
         <img 
-          src="https://images.pexels.com/photos/2183972/pexels-photo-2183972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          alt="pic" className="w-100" style={{ height: "14cm", filter:'brightness(0.6)'}}/>
+          src="https://beebom.com/wp-content/uploads/2016/01/10-Great-DSLR-Accessories-for-Beginning-Photographers.jpg"
+          alt="pic" className="w-100" style={{ height: "15cm", filter:'brightness(0.6)'}}/>
             <div style={{ display: "flex", flexWrap: "wrap", paddingLeft: "50px", marginTop: "60px",}}>
             { accessory.map((product) => (
             <Card

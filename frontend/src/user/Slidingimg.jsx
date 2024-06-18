@@ -1,6 +1,5 @@
 import React from "react";
-import ReactCardSlider from "react-card-slider-component";
-
+import SimpleImageSlider from "react-simple-image-slider"
 const slides =[
     {
         img :"https://www.shutterstock.com/image-vector/chattogram-bangladesh-may-18-2023-600nw-2304647487.jpg",
@@ -36,7 +35,7 @@ const slides =[
 const Horizon= ()=>{
     return(
         <div>
-            <ReactCardSlider slides={slides} />
+            <SimpleImageSlider slides={slides} />
         </div>
     )
 }
