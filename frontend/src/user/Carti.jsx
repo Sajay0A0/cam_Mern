@@ -23,7 +23,6 @@ export default function Carti() {
         "http://localhost:5000/api/user/getcart",
         {
           userEmail: email,
-          productId: product._id,
         }
       );
 
@@ -36,12 +35,16 @@ export default function Carti() {
 
   const cartProducts = cart.map(cartItem => {
     const productData = product.find(p => p._id === cartItem.productId);
+    if (!productData) {
+      return null; // Handle case where product data is not found
+    }
     return {
       ...productData,
       quantity: cartItem.quantity,
       totalPrice: productData.price * cartItem.quantity
     };
-  });
+  }).filter(item => item !== null); // Filter out null values
+
   console.log("Cart1", cartProducts);
 
   const confirmDelete = (product) => {

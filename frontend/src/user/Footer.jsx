@@ -15,7 +15,7 @@ export default function Footer(){
                 <p className="foot-name">&copy; 2024click a foto.all rights reserved</p>
 
                <div className='foot-values'>
-               <section className='col-lg-4 ' style={{}}>
+               <section className='col-lg-4 '>
                 <ul className='ul'>
                     <span  style={{display:'flex',paddingBottom:'10px',fontSize:'25px' }}> <b> C L I C K</b></span>
                 <><Link className='  text-decoration-none' style={{color:"#f5f5dc"}} to='/'><span>We believe 

@@ -12,6 +12,8 @@ import Favorite from "@mui/icons-material/Favorite";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Checkbox } from "@mui/material";
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 
 
 
@@ -21,6 +23,10 @@ export default function Home() {
   const {product,setProdut,cart,setCart,like,setLike}=useContext(myContext)
   const email=localStorage.getItem("userEmail")
   const navigate=useNavigate()
+
+  useEffect(()=>{
+    Aos.init({duration: 3000});
+  },[]);
 
   useEffect(() =>{
     fetchProduct();
@@ -237,18 +243,18 @@ navigate(`/descript/${productId}`)
       <MDBCard style={{ marginTop:'50px',maxWidth: '100%',backgroundColor:'#BB96F7'}}>
       <MDBRow className='g-0'>
         <MDBCol md='4'>
-          <MDBCardImage style={{padding:'20px 30px 20px'}} className="w-100"
+          <MDBCardImage style={{padding:'20px 30px 20px'}} className="w-100" data-aos="zoom-in-up"
           src='https://images.pexels.com/photos/14094009/pexels-photo-14094009.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt='PIC' fluid />
         </MDBCol>
         <MDBCol md='8'>
           <MDBCardBody>
-            <MDBCardTitle style={{ marginTop:'20px',textAlign:'center',fontSize:'40px'}}>All Products</MDBCardTitle>
-            <MDBCardText>
+            <MDBCardTitle style={{ marginTop:'20px',textAlign:'center',fontSize:'40px'}} data-aos="fade-right">All Products</MDBCardTitle>
+            <MDBCardText data-aos="fade-left">
               This is a wider card with supporting text below as a natural lead-in to additional content. This
               content is a little bit longer.
             </MDBCardText>
               <Link className="text-dark" to='/main'>
-            <button className="btn border-dark show-butto-new" >All Products</button></Link>
+            <button className="btn border-dark show-butto-new" data-aos="zoom-in-up" >All Products</button></Link>
             
           </MDBCardBody>
         </MDBCol>
@@ -258,11 +264,11 @@ navigate(`/descript/${productId}`)
       <br />
 
       <div className="title1">
-        <h2 class="" style={{ textAlign: "center" }}>
+        <h2 class="" style={{ textAlign: "center" }} data-aos="fade-right">
           Why C L I C K ?
         </h2>
 
-        <p style={{ textAlign: "center" }}>
+        <p style={{ textAlign: "center" }} data-aos="fade-left">
           A platform that puts a world of possibilities at your fingertips.
         </p>
       </div>
@@ -272,11 +278,11 @@ navigate(`/descript/${productId}`)
           style={{ marginRight: "10px", paddingLeft: "10%" }}
         >
           <img
-            style={{ marginLeft: "25%", marginBottom: "10%" }}
+            style={{ marginLeft: "25%", marginBottom: "10%" }} data-aos="zoom-in-right"
             src="https://fotocentreindia.com/wp-content/uploads/2018/07/light-bulb-outlined-hand-drawn-tool.png"
             alt="oic"
           />
-          <p>
+          <p  data-aos="fade-up">
             With dozens of intelligent concepts, you’ll
             <br /> find what you’re looking for in our store, and <br />
             it will be unique and personalized to match.
@@ -287,11 +293,11 @@ navigate(`/descript/${productId}`)
           style={{ marginRight: "10px", paddingLeft: "10%" }}
         >
           <img
-            style={{ marginLeft: "25%", marginBottom: "10%" }}
+            style={{ marginLeft: "25%", marginBottom: "10%" }} data-aos="zoom-in-up"
             src="https://fotocentreindia.com/wp-content/uploads/2018/07/chatting-speech-bubbles-hand-drawn-bubbles-couple.png"
             alt="oic"
           />
-          <p>
+          <p  data-aos="fade-up">
             Our customer support is second to none – <br />
             users rave about how we don’t rest until <br />
             every issue is solved to their satisfaction.
@@ -302,11 +308,11 @@ navigate(`/descript/${productId}`)
           style={{ marginRight: "10px", paddingLeft: "10%" }}
         >
           <img
-            style={{ marginLeft: "25%", marginBottom: "10%" }}
+            style={{ marginLeft: "25%", marginBottom: "10%" }} data-aos="zoom-in-left"
             src="https://fotocentreindia.com/wp-content/uploads/2018/07/shopping-cart-sketch.png"
             alt="oic"
           />
-          <p>
+          <p  data-aos="fade-up"> 
             With 128-bit SSL security with advanced <br />
             encryption you are guaranteed that your <br />
             purchases are safe.

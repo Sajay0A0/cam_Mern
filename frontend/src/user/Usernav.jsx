@@ -23,19 +23,19 @@ export default function Usernav() {
   const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
 
   const pathtomap = {
-    lig: '/lights',god: '/godox',
-    len: '/lenses',boy: '/boya',
-    mic: '/audio',tok: '/tokina',
-    cam: '/camera',sma: '/smallring',
-    ds: '/dslr',tet: '/tethertool',
-    nik: '/nikon',eas: '/easycover',
-    can: '/canon',
-    fuj: '/fujifilm',
-    son: '/sony',
-    sig: '/sigma',
-    sir: '/sirui',
-    dji: '/dji',
-    feel: '/feelworld',
+    lig: '/lights',god: '/godox',mic:'/microphone',
+    len: '/lenses',boy: '/boya',rec:'/record',
+    mic: '/audio',tok: '/tokina',acce:'/accessory',
+    cam: '/camera',sma: '/smallring',char:'/accessory',
+    ds: '/dslr',tet: '/tethertool',cab:'/accessory',
+    nik: '/nikon',eas: '/easycover',bat:'/accessory',
+    can: '/canon',vid :'/videocam',cov:'/accessory',
+    fuj: '/fujifilm',ins: '/instax',cas:'/accessory',
+    son: '/sony',mir: '/mirrless',conti:'/continue',
+    sig: '/sigma',len:'/Mirrlesslens',led:'/led',
+    sir: '/sirui',meadi:'/Mediumformat',fla:'/flash',
+    dji: '/dji',medi: '/Mediumformat',soft:'/softbox',
+    feel: '/feelworld',mor: '/morphiclens'
   };
 
   const handleSearch = () => {
